@@ -37,6 +37,9 @@
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.45",
