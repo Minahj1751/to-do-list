@@ -29,6 +29,8 @@ git push -u origin main
 2. Click "New Project" → "Deploy from GitHub repo"
 3. Select your repository and click "Import"
 
+**Important**: Since this is a monorepo with both frontend and backend, Railway needs to know which directory to build. The root `railway.toml` file is configured to build the backend service.
+
 ### 2.2 Add PostgreSQL Database
 
 1. In your Railway project, click "New Service"
