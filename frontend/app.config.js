@@ -26,7 +26,7 @@ export default {
     'expo-secure-store',
   ],
   extra: {
-    apiBaseUrl: 'http://192.168.0.197:3000/api',
+    apiBaseUrl: 'http://192.168.0.194:3000/api',
     eas: {
       projectId: '83154a56-614a-4b7e-8a84-e3e072177c33',
     },

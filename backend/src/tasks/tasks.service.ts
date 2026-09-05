@@ -10,7 +10,7 @@ export class TasksService {
   constructor(
     @InjectRepository(Task)
     private taskRepository: Repository<Task>,
-  ) {}
+  ) { }
 
   async create(userId: string, createTaskDto: CreateTaskDto) {
     const task = this.taskRepository.create({
@@ -52,7 +52,7 @@ export class TasksService {
 
     if (filters?.search) {
       queryBuilder.andWhere(
-        '(task.title ILIKE :search OR task.description ILIKE :search)',
+        '(task.title LIKE :search OR task.description LIKE :search)',
         { search: `%${filters.search}%` },
       );
     }
@@ -123,12 +123,12 @@ export class TasksService {
     const task = await this.findOne(userId, id);
     task.status = TaskStatus.PENDING;
     task.completed_at = null as any;
-    
+
     // Check if task should be overdue
     if (task.due_date && new Date(task.due_date) < new Date()) {
       task.status = TaskStatus.OVERDUE;
     }
-    
+
     return this.taskRepository.save(task);
   }
 

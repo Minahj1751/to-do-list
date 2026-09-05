@@ -1,4 +1,0 @@
-# Railway project configuration
-[build]
-buildCommand = "cd backend && npm install && npm run build"
-startCommand = "cd backend && npm run start:prod"
